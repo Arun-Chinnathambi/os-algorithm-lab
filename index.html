@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OS Algorithm Lab</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+<a class="brand" href="index.html">OS Algorithm Lab</a>
+<a class="l" href="cpu.html">CPU scheduling</a>
+<a class="l" href="banker.html">Banker’s algorithm</a>
+<a class="l" href="page-replacement.html">Page replacement</a>
+<a class="l" href="disk.html">Disk scheduling</a>
+<button id="theme" aria-label="Toggle colour theme">Theme</button>
+</header>
+<main>
+<h1>Operating system algorithms, simulated</h1>
+<p class="sub">An operating system shares scarce hardware (the CPU, memory and the disk) between many programs. The algorithms below decide who gets what and when. Pick a topic, enter your own data and compare how each algorithm performs.</p>
+<div class="cards">
+<a class="card" href="cpu.html" style="border-top-color:var(--c0)"><h3>CPU scheduling</h3><p>Only one process runs on a core at a time, so the scheduler picks the next one from the ready queue. Good choices cut waiting and turnaround time; poor ones leave short jobs stuck behind long ones. Covers FCFS, SJF, SRTF, Priority and Round robin with Gantt charts.</p><b>Open simulator</b></a>
+<a class="card" href="banker.html" style="border-top-color:var(--c1)"><h3>Banker’s algorithm</h3><p>A deadlock avoidance method by Dijkstra. Before granting a resource request, the system checks that it stays in a safe state, meaning some order exists in which every process can still finish. Find the safe sequence and test new requests.</p><b>Open simulator</b></a>
+<a class="card" href="page-replacement.html" style="border-top-color:var(--c2)"><h3>Page replacement</h3><p>Virtual memory keeps only some pages in physical frames. When a page is missing and every frame is full, the OS must evict one. Compare FIFO, LRU and Optimal by page faults and hit ratio.</p><b>Open simulator</b></a>
+<a class="card" href="disk.html" style="border-top-color:var(--c3)"><h3>Disk scheduling</h3><p>On a hard disk, moving the head between cylinders (seek time) is the slowest part of an access. The scheduler orders pending requests to cut head movement. Covers FCFS, SSTF, SCAN, C-SCAN, LOOK and C-LOOK.</p><b>Open simulator</b></a>
+</div>
+</main>
+<script src="js/common.js"></script>
+</body>
+</html>

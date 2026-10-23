@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Banker’s algorithm | OS Algorithm Lab</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+<a class="brand" href="index.html">OS Algorithm Lab</a>
+<a class="l" href="cpu.html">CPU scheduling</a>
+<a class="l" href="banker.html" aria-current="page">Banker’s algorithm</a>
+<a class="l" href="page-replacement.html">Page replacement</a>
+<a class="l" href="disk.html">Disk scheduling</a>
+<button id="theme" aria-label="Toggle colour theme">Theme</button>
+</header>
+<main>
+<h1>Banker’s algorithm</h1>
+<p class="sub">One row per process, numbers separated by spaces. Available holds the free instances of each resource type.</p>
+<div class="panel"><div class="grid">
+<div><label for="bA">Allocation</label><textarea id="bA" rows="6">0 1 0
+2 0 0
+3 0 2
+2 1 1
+0 0 2</textarea></div>
+<div><label for="bM">Maximum</label><textarea id="bM" rows="6">7 5 3
+3 2 2
+9 0 2
+2 2 2
+4 3 3</textarea></div>
+<div><label for="bV">Available</label><input id="bV" value="3 3 2"></div>
+<div><label for="bP">Request from process (optional)</label><input id="bP" type="number" value="1" min="0"></div>
+<div><label for="bR">Request vector (optional)</label><input id="bR" value="1 0 2"></div></div>
+<div class="row"><button class="p" id="bRun">Check safety</button></div><p class="err" id="bErr" role="alert"></p></div>
+<div class="panel"><h2>Result</h2><p class="verdict" id="bV1"></p><div class="scroll"><table id="bN"></table></div><div class="scroll"><table id="bS"></table></div><p class="verdict" id="bV2" hidden></p></div>
+</main>
+<script src="js/common.js"></script>
+<script src="js/banker.js"></script>
+</body>
+</html>

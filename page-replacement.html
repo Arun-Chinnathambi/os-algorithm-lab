@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page replacement | OS Algorithm Lab</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+<a class="brand" href="index.html">OS Algorithm Lab</a>
+<a class="l" href="cpu.html">CPU scheduling</a>
+<a class="l" href="banker.html">Banker’s algorithm</a>
+<a class="l" href="page-replacement.html" aria-current="page">Page replacement</a>
+<a class="l" href="disk.html">Disk scheduling</a>
+<button id="theme" aria-label="Toggle colour theme">Theme</button>
+</header>
+<main>
+<h1>Page replacement</h1>
+<p class="sub">Enter a page reference string and the number of physical frames.</p>
+<div class="panel"><div class="grid">
+<div class="wide"><label for="pR">Reference string</label><input id="pR" value="7 0 1 2 0 3 0 4 2 3 0 3 2 1 2 0 1 7 0 1"></div>
+<div><label for="pF">Frames</label><input id="pF" type="number" value="3" min="1" max="10"></div></div>
+<div class="row"><button class="p" id="pRun">Run simulation</button></div><p class="err" id="pErr" role="alert"></p></div>
+<div class="panel"><h2>Frame contents</h2><div class="tabs" id="pTabs" role="tablist"></div><div class="scroll"><table id="pT"></table></div></div>
+<div class="panel"><h2>Performance comparison</h2><div class="scroll"><table id="pC"></table></div><div class="bars" id="pB"></div><p class="verdict" id="pV"></p><p class="note">Optimal needs knowledge of future requests, so real systems approximate it. FIFO can show Belady’s anomaly, where more frames cause more faults.</p></div>
+</main>
+<script src="js/common.js"></script>
+<script src="js/page-replacement.js"></script>
+</body>
+</html>

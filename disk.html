@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Disk scheduling | OS Algorithm Lab</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+<a class="brand" href="index.html">OS Algorithm Lab</a>
+<a class="l" href="cpu.html">CPU scheduling</a>
+<a class="l" href="banker.html">Banker’s algorithm</a>
+<a class="l" href="page-replacement.html">Page replacement</a>
+<a class="l" href="disk.html" aria-current="page">Disk scheduling</a>
+<button id="theme" aria-label="Toggle colour theme">Theme</button>
+</header>
+<main>
+<h1>Disk scheduling</h1>
+<p class="sub">Enter a queue of cylinder requests and see how the head moves under six algorithms.</p>
+<div class="panel"><div class="grid">
+<div class="wide"><label for="dQ">Request queue</label><input id="dQ" value="98, 183, 37, 122, 14, 124, 65, 67"></div>
+<div><label for="dH">Initial head position</label><input id="dH" type="number" value="53" min="0"></div>
+<div><label for="dS">Total cylinders</label><input id="dS" type="number" value="200" min="2" max="10000"></div>
+<div><label for="dD">Initial direction</label><select id="dD"><option value="up">Toward higher cylinders</option><option value="down">Toward lower cylinders</option></select></div></div>
+<div class="row"><button class="p" id="dRun">Run simulation</button><button id="dRand">Random queue</button></div><p class="err" id="dErr" role="alert"></p></div>
+<div class="panel"><h2>Head movement</h2><div class="tabs" id="dTabs" role="tablist"></div><div class="stats" id="dSt"></div><div class="scroll"><div id="dCh"></div></div><p class="note" id="dSq"></p></div>
+<div class="panel"><h2>Performance comparison</h2><div class="scroll"><table id="dC"></table></div><div class="bars" id="dB"></div><p class="verdict" id="dV"></p><p class="note">Totals count every cylinder crossed, including the return jump in C-SCAN and C-LOOK.</p></div>
+</main>
+<script src="js/common.js"></script>
+<script src="js/disk.js"></script>
+</body>
+</html>
